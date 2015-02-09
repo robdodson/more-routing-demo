@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="elements.html">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+  <template is="auto-binding" id="app">
+
+    <a href="{{urlFor('users')}}">Users</a>
+    <!-- <a href="{{urlFor('users/:username', {username: 'Rob'})}}">Rob</a> -->
+
+    <more-route-selector selectedParams="{{params}}">
+      <core-pages>
+        
+        <section route="users">
+          <h1>Users</h1>
+          <div>This is the users section</div>
+        </section>
+
+        <section route="user-info">
+          <h1>User: {{params.username}}</h1>
+          <div>This is the {{params.username}}'s section</div>
+        </section>
+        
+        <!-- Must be last: this is the default route. -->
+        <section route="root">
+          <h1>Index</h1>
+          <div>This is the index section</div>
+        </section>
+
+      </core-pages>
+    </more-route-selector>
+
+  </template>
+  <script src="app.js"></script>
+</body>
+
+</html>
