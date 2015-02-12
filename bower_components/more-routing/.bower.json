@@ -19,11 +19,11 @@
     "webcomponentsjs": "Polymer/webcomponentsjs"
   },
   "homepage": "https://github.com/Polymore/more-routing",
-  "_release": "a664353aa1",
+  "_release": "36011accf9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a664353aa13b51602c94825a18bb96ac515ae14a"
+    "commit": "36011accf9bb1eb24fb590117f5697f7916b9878"
   },
   "_source": "git://github.com/Polymore/more-routing.git",
   "_target": "*",
