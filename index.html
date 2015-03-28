@@ -16,18 +16,20 @@
     <core-drawer-panel>
       <core-header-panel drawer>
         <core-toolbar>Menu</core-toolbar>
-
-        <core-menu selected="0">
-          <core-item label="Home">
-            <a href="{{urlFor('home')}}"></a>
-          </core-item>
-          <core-item label="Users">
-            <a href="{{urlFor('users')}}"></a>
-          </core-item>
-          <core-item label="Contact">
-            <a href="{{urlFor('contact')}}"></a>
-          </core-item>
-        </core-menu>
+        
+        <more-route-selector>
+          <core-menu>
+            <core-item label="Home" route="home">
+              <a href="{{urlFor('home')}}"></a>
+            </core-item>
+            <core-item label="Users" route="users">
+              <a href="{{urlFor('users')}}"></a>
+            </core-item>
+            <core-item label="Contact" route="contact">
+              <a href="{{urlFor('contact')}}"></a>
+            </core-item>
+          </core-menu>
+        </more-route-selector>
 
       </core-header-panel>
       <core-header-panel main>
@@ -35,39 +37,35 @@
           <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
           <div flex>My App</div>
         </core-toolbar>
-        <main>
+        <main>          
+          
           <more-route-selector selectedParams="{{params}}">
             <core-pages>
-
               <section route="home">
-                <h1>Index</h1>
-                <div>This is the index section</div>
+                <h1>Home</h1>
+                <div>This is the home section</div>
               </section>
 
               <section route="users">
                 <h1>Users</h1>
-                <div>This is a list of users!</div>
-                <ul>
-                  <li>
-                    <a href="{{urlFor('/users/:username', {username: 'Rob'})}}">
-                      Rob
-                    </a>
-                  </li>
-                </ul>
+                <div>This is the users section</div>
+                <a href="{{urlFor('user-info', {name: 'Rob'})}}">
+                  Rob
+                </a>
               </section>
 
-              <section route="users-info">
-                <h1>Users: {{params.username}}</h1>
-                <div>This is the {{params.username}}'s section</div>
+              <section route="user-info">
+                <h1>User: {{params.name}}</h1>
+                <div>This is {{params.name}}'s section</div>
               </section>
 
               <section route="contact">
                 <h1>Contact</h1>
                 <div>Gimme a shout!</div>
               </section>
-
             </core-pages>
           </more-route-selector>
+
         </main>
       </core-header-panel>
     </core-drawer-panel>
